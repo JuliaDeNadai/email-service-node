@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "v1.0.0",
+    "title": "Email service",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "local"
+    }
+  ],
+  "paths": {
+    "/api/healthcheck/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/email/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to": {
+                    "example": "any"
+                  },
+                  "subject": {
+                    "example": "any"
+                  },
+                  "body": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
